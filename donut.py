@@ -54,4 +54,18 @@ def main():
                 if 0 < y < height and 0 < x < width and z[o] < mess:
                     z[o] = mess
                     screen[o] = ".,-~:;=!*#$@"[N if N > 0 else 0]
+
+        # Print the screen buffer
+        os.system(clear)
+        for index, char in enumerate(screen):
+            if index % width == 0:
+                print()
+            else:
+                print(char, end='')
         
+        # Increment angles
+        a += 0.04
+        b += 0.02
+
+if __name__ == "__main__":
+    main()
